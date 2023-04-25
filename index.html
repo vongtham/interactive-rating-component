@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main>
+    
+    <div class="container">
+      <!-- Rating state start -->
+      <div class="card-rating">
+        <div class="circle">
+          <img src="/images/icon-star.svg" alt="star">
+        </div>
+        <h1 class="fc-white lg-block">How did we do?</h1>
+        <p class="fc-gray sm-block">
+          Please let us know how we did with your support request. All feedback is appreciated 
+          to help us improve our offering!      
+        </p>
+        <ul class="lg-block ratings">
+          <li class="circle fc-gray rating" data-rating="1">1</li>
+          <li class="circle fc-gray rating" data-rating="2">2</li>
+          <li class="circle fc-gray rating" data-rating="3">3</li>
+          <li class="circle fc-gray rating" data-rating="4">4</li>
+          <li class="circle fc-gray rating" data-rating="5">5</li>
+        </ul>
+        <button class="fc-white lg-block button">Submit</button>
+      </div>
+    </div>
+    <!-- Rating state end -->   
+
+    <!-- Thank you state start -->
+    <div class="thank-you hidden" id="state-thanks">
+      <div class="img-thanks">
+        <img src="/images/illustration-thank-you.svg" alt="mobile">
+      </div>
+      <p class="lg-block fc-orange Ellipse76 result"></p>
+      <h1 class="lg-block fc-white">Thank you!</h1>
+      <p class="sm-block fc-gray">
+        We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!    
+      </p>
+    </div>
+  </main> 
+  <!-- Thank you state end -->
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+  <script>
+   
+  const container = document.querySelector(".container");
+  const ratingCard = document.querySelector(".card-rating");
+  const thankYou = document.querySelector(".thank-you");
+
+  let rating_container = document.querySelector(".ratings");
+  let ratings = document.querySelectorAll(".rating");
+  let button = document.querySelector(".button");
+  let rating;
+
+  rating_container.addEventListener("click", (e) => {
+    rating = e.target.dataset.rating;
+    console.log(rating);
+
+    resetRating();
+    ratings[rating - 1].classList.add("active");
+  });
+
+  function resetRating() {
+    ratings.forEach((rating) => {
+        rating.classList.remove("active");
+    });
+  }
+
+  button.addEventListener("click", (e) => {
+    if (rating !== undefined) {
+        ratingCard.classList.add("hidden");
+        thankYou.classList.remove("hidden");
+        container.appendChild(thankYou);
+    }
+
+    const result = document.querySelector(".result");
+    result.textContent = `You selected ${rating} out of 5`;
+  });
+  
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+    --cl-primary: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --grey-300: hsl(217, 12%, 63%);
+    --grey-400: hsl(216, 12%, 54%);
+    --blue-300: hsl(213, 19%, 18%);
+    --blue-400: hsl(216, 12%, 8%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Overpass', sans-serif;
+    font-size: 0.938rem;
+    background: var(--blue-400);
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+img {
+    display: block;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+li {
+    text-decoration: none;
+}
+
+.fc-white {
+    color: var(--white);
+}
+
+.fc-orange {
+    color: var(--cl-primary);
+}
+
+.fc-gray {
+    color: var(--grey-300);
+}
+
+.sm-block {
+    margin-top: 0.6rem;
+}
+
+.lg-block {
+    margin-top: 1.5rem;
+}
+
+.circle {
+    background: hsl(215, 21%, 23%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.Ellipse {
+    background: hsl(215, 21%, 23%);
+    border-radius: 2rem;
+    padding: 0.3rem 0.8rem;
+}
+
+.container {
+    background: var(--blue-300);
+    width: min(90%, 18.75rem);
+    margin-inline: auto;
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
+}
+
+/* Rating start styling*/
+
+h1 {
+    font-size: 1.5rem;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.button {
+    width: 100%;
+    background: var(--cl-primary);
+    border-radius: 2rem;
+    border: none;
+    height: 2.5rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background: var(--white);
+    color: var(--cl-primary);
+    cursor: pointer;
+}
+
+li:hover {
+    background: var(--cl-primary);
+    cursor: pointer;
+    color: var(--white)
+}
+
+.active {
+    background: var(--grey-400);
+    color: var(--white);
+}
+
+/* Rating end styling */
+
+/* Thank you start styling */
+
+.thank-you {
+    margin-inline: auto;
+}
+
+.img-thanks {
+    display: grid;
+    place-content: center;
+}
+
+.thank-you > h1 {
+    text-align: center;
+}
+
+.thank-you > p {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Thank you end styling */
+
